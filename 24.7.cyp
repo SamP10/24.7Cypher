@@ -55,15 +55,53 @@ CREATE(Senior5:Staff{title:"Senior", name:"Mila Treston", DOB:"19/06/96"})
 
 //Contact Social
 CREATE(Social1:Staff{title:"Social", name:"Jessup Riley", DOB:"12/03/93"})
-CREATE(Social1:Staff{title:"Social", name:"Ian Jerrison", DOB:"28/11/96"})
-CREATE(Social1:Staff{title:"Social", name:"Jessica Allen", DOB:"02/02/94"})
-CREATE(Social1:Staff{title:"Social", name:"Alex Tamsen", DOB:"18/06/95"})
-CREATE(Social1:Staff{title:"Social", name:"LLoyd Stone", DOB:"24/09/95"})
+CREATE(Social2:Staff{title:"Social", name:"Ian Jerrison", DOB:"28/11/96"})
+CREATE(Social3:Staff{title:"Social", name:"Jessica Allen", DOB:"02/02/94"})
+CREATE(Social4:Staff{title:"Social", name:"Alex Tamsen", DOB:"18/06/95"})
+CREATE(Social5:Staff{title:"Social", name:"LLoyd Stone", DOB:"24/09/95"})
 
 //Contact Management
 CREATE(Manager1:Staff{title:"Manager", name:"Brittany Checkyavik", DOB:"20/06/92"})
-CREATE(Manager1:Staff{title:"Manager", name:"Sharna Blackley", DOB:"10/02/93"})
-CREATE(Manager1:Staff{title:"Manager", name:"Allan Richardson", DOB:"02/12/92"})
-CREATE(Manager1:Staff{title:"Manager", name:"Richard Sheeran", DOB:"05/01/89"})
+CREATE(Manager2:Staff{title:"Manager", name:"Sharna Blackley", DOB:"10/02/93"})
+CREATE(Manager3:Staff{title:"Manager", name:"Allan Richardson", DOB:"02/12/92"})
+CREATE(Manager4:Staff{title:"Manager", name:"Richard Sheeran", DOB:"05/01/89"})
 
 //Staff Relationships
+CREATE
+//Advisers
+  (Advisers)-[:STAFF]->(Adviser1),
+  (Advisers)-[:STAFF]->(Adviser2),
+  (Advisers)-[:STAFF]->(Adviser3),
+  (Advisers)-[:STAFF]->(Adviser4),
+  (Advisers)-[:STAFF]->(Adviser5),
+  (Advisers)-[:STAFF]->(Adviser6),
+  (Advisers)-[:STAFF]->(Adviser7),
+  (Advisers)-[:STAFF]->(Adviser8),
+//Seniors
+  (Seniors)-[:STAFF]->(Senior1),
+  (Seniors)-[:STAFF]->(Senior2),
+  (Seniors)-[:STAFF]->(Senior3),
+  (Seniors)-[:STAFF]->(Senior4),
+  (Seniors)-[:STAFF]->(Senior5),
+//Social
+  (Social)-[:STAFF]->(Social1),
+  (Social)-[:STAFF]->(Social2),
+  (Social)-[:STAFF]->(Social3),
+  (Social)-[:STAFF]->(Social4),
+  (Social)-[:STAFF]->(Social5),
+//Management
+  (Management)-[:STAFF]->(Manager1),
+  (Management)-[:STAFF]->(Manager2),
+  (Management)-[:STAFF]->(Manager3),
+  (Management)-[:STAFF]->(Manager4),
+//Relationship between management and staff
+  (Manager1)-[:MANAGES]->(Adviser1),
+  (Manager1)-[:MANAGES]->(Adviser2),
+  (Manager1)-[:MANAGES]->(Senior2),
+  (Manager1)-[:MANAGES]->(Social4),
+  (Manager1)-[:MANAGES]->(Social5),
+  (Manager2)-[:MANAGES]->(Adviser3),
+  (Manager2)-[:MANAGES]->(Adviser4),
+  (Manager2)-[:MANAGES]->(Senior3),
+  (Manager2)-[:MANAGES]->(Senior2),
+  (Manager2)-[:MANAGES]->(Social3),
