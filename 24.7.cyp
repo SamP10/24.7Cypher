@@ -207,11 +207,11 @@ CREATE
 
 
 //FRAUD SECURITY SAFER GAMBLING PROMOTIONS/MARKETING OVERSEEN BY THE GAMBLING COMMISSION
-CREATE(Fraud:Fraud{title:"Fraud"})
-CREATE(Security:Security{title:"Security/Safer Gambling"})
-CREATE(Promotions:Promotions{title:"Promotions"})
-CREATE(GamblingCommission:GamblingCommission{title:"The Gambling Commission"})
-CREATE(Marketing:Marketing{title:"Marketing"})
+CREATE(Fraud:Department{title:"Fraud"})
+CREATE(Security:Department{title:"Security/Safer Gambling"})
+CREATE(Promotions:Department{title:"Promotions"})
+CREATE(GamblingCommission:Department{title:"The Gambling Commission"})
+CREATE(Marketing:Department{title:"Marketing"})
 
 //Fraud team
 CREATE(FraudRoles:FraudR{title:"Fraud Roles"})
