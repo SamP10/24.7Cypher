@@ -303,3 +303,32 @@ CREATE
 
 //Website Mapping
 CREATE(Website:Website{title:"Website"})
+CREATE(Frontend:Website{title:"Front-end"})
+CREATE(Backend:Website{title:"Back-end"})
+CREATE(Administration:Website{title:"Administration"})
+CREATE(StaffPages:Website{title:"Staff Pages"})
+CREATE(SLogin:Website{title:"Staff Login"})
+CREATE(ULogin:Website{title:"User Login"})
+CREATE(Support:Website{title:"Contact Support"})
+CREATE(GamesP:Website{title:"Games Page"})
+CREATE(CasinoP:Website{title:"Casino Page"})
+CREATE(BettingP:Website{title:"Betting Page"})
+CREATE(Account:Website{title:"Account Page"})
+CREATE(BetAdmin:Website{title:"Bet Admin"})
+CREATE(PlayTech:Website{title:"Play-tech"})
+
+//Website Relationships
+CREATE
+  (BET24)-[:WEBSITE]->(Website),
+  (Website)-[:FRONT]->(Frontend),
+  (Website)-[:BACK]->(Backend),
+  (Frontend)-[:LOGIN]->(ULogin),
+  (Backend)-[:LOGIN]->(SLogin),
+  (ULogin)-[:ACCOUNT]->(Account),
+  (ULogin)-[:SUPPORT]->(Support),
+  (ULogin)-[:CASINO]->(CasinoP),
+  (ULogin)-[:GAMING]->(GamesP),
+  (ULogin)-[:BETTING]->(BettingP),
+  (SLogin)-[:BET_ADMIN]->(BetAdmin),
+  (SLogin)-[:PLAYTECH]->(PlayTech),
+  (SLogin)-[:ADMIN]->(Administration)
