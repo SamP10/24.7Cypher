@@ -207,3 +207,96 @@ CREATE
 
 
 //FRAUD SECURITY SAFER GAMBLING PROMOTIONS/MARKETING OVERSEEN BY THE GAMBLING COMMISSION
+CREATE(Fraud:Fraud{title:"Fraud"})
+CREATE(Security:Security{title:"Security/Safer Gambling"})
+CREATE(Promotions:Promotions{title:"Promotions"})
+CREATE(GamblingCommission:GamblingCommission{title:"The Gambling Commission"})
+CREATE(Marketing:Marketing{title:"Marketing"})
+
+//Fraud team
+CREATE(FraudRoles:FraudR{title:"Fraud Roles"})
+CREATE(FraudDoc:FraudD{title:"Fraud Documents"})
+
+CREATE(Fraud1:FraudR{title:"Fraud Team", name:"Joey Tribi", DOB:"20/05/1987"})
+CREATE(Fraud2:FraudR{title:"Fraud Team", name:"Ellie Daniels", DOB:"12/09/1990"})
+CREATE(Fraud3:FraudR{title:"Fraud Team", name:"Pamela Richards", DOB:"29/02/1989"})
+CREATE(Fraud4:FraudR{title:"Fraud Team", name:"Lewis Reed", DOB:"09/01/1985"})
+
+//Security and Safer gambling team
+CREATE(SecRoles:SecR{title:"Security Roles"})
+CREATE(SecDoc:SecD{title:"Security Documents"})
+
+CREATE(Security1:SecR{title:"Security Team", name:"Tilly Lewis", DOB:"14/07/1990"})
+CREATE(Security2:SecR{title:"Security Team", name:"Harry Hallson", DOB:"10/03/1985"})
+CREATE(Security3:SecR{title:"Security Team", name:"Taylor Steward", DOB:"23/09/1989"})
+CREATE(Security4:SecR{title:"Security Team", name:"Nelly Anderson", DOB:"30/09/1992"})
+
+CREATE(SaferGamb1:SecR{title:"Safer Gambling", name:"Barry Khan", DOB:"02/04/1984"})
+CREATE(SaferGamb2:SecR{title:"Safer Gambling", name:"Terry Pollard", DOB:"17/06/1990"})
+CREATE(SaferGamb3:SecR{title:"Safer Gambling", name:"Paul Rudd", DOB:"24/11/1989"})
+CREATE(SaferGamb4:SecR{title:"Safer Gambling", name:"Shania Twanette", DOB:"27/01/1985"})
+
+//Promotions team
+CREATE(PromoRoles:PromoR{title:"Promotion Roles"})
+CREATE(PromoDoc:PromoDoc{title:"Promotion Documents"})
+
+CREATE(Promo1:PromoR{title:"Promotion Team", name:"Sarah Andrews", DOB:"19/02/1992"})
+CREATE(Promo2:PromoR{title:"Promotion Team", name:"Zarrifsha Ahmed", DOB:"20/12/1997"})
+CREATE(Promo3:PromoR{title:"Promotion Team", name:"Richard Brett", DOB:"04/08/1990"})
+CREATE(Promo4:PromoR{title:"Promotion Team", name:"Euan Shelby", DOB:"01/10/1995"})
+
+//Gambling Commission
+CREATE(GamCommRoles:GamComR{title:"Gambling Commission Roles"})
+CREATE(GamCommDoc:GamComD{title:"Gambling Commission Documents"})
+
+CREATE(GamblingComm1:GamComR{title:"Gambling Comission Officer", name:"Ross Jones", DOB:"22/04/1987"})
+CREATE(GamblingComm2:GamComR{title:"Gambling Comission Officer", name:"Charlie Barks", DOB:"09/07/1985"})
+CREATE(GamblingComm3:GamComR{title:"Gambling Comission Officer", name:"Melinda Privchenka", DOB:"23/07/1982"})
+
+//Marketing team
+CREATE(MarketingRoles:MarkR{title:"Marketing Roles"})
+CREATE(MarketingDoc:MarkD{title:"Marketing Documents"})
+
+CREATE(Marketing1:MarkR{title:"Marketing Team", name:"Tessa Smithers", DOB:"12/12/1996"})
+CREATE(Marketing2:MarkR{title:"Marketing Team", name:"Carmel Caroll", DOB:"17/03/1994"})
+CREATE(Marketing3:MarkR{title:"Marketing Team", name:"Paul Bettany", DOB:"30/09/1992"})
+
+//Relationships
+CREATE
+  (Department)-[:FRAUD]->(Fraud),
+  (Department)-[:MARKETING]->(Marketing),
+  (Department)-[:GAMBLING_COMMISSION]->(GamblingCommission),
+  (Department)-[:PROMOTIONS]->(Promotions),
+  (Department)-[:SECURITY]->(Security),
+  (Fraud)-[:FRAUD_ROLES]->(FraudRoles),
+  (Fraud)-[:FRAUD_DOCUMENTS]->(FraudDoc),
+  (Marketing)-[:MARKETING_ROLES]->(MarketingRoles),
+  (Marketing)-[:MARKETING_DOCUMENTS]->(MarketingDoc),
+  (GamblingCommission)-[:GAMBLING_COMM_ROLES]->(GambCommRoles),
+  (GamblingCommission)-[:GAMBLING_COMM_DOCS]->(GambCommDoc),
+  (Promotions)-[:PROMOTION_ROLES]->(PromoRoles),
+  (Promotions)-[:PROMOTION_DOCUMENTS]->(PromoDoc),
+  (Security)-[:SECURITY_ROLES]->(SecRoles),
+  (Security)-[:SECURITY_DOCUMENTS]->(SecDoc),
+  (FraudRoles)-[:MEMBER]->(Fraud1),
+  (FraudRoles)-[:MEMBER]->(Fraud2),
+  (FraudRoles)-[:MEMBER]->(Fraud3),
+  (FraudRoles)-[:MEMBER]->(Fraud4),
+  (MarketingRoles)-[:MEMBER]->(Marketing1),
+  (MarketingRoles)-[:MEMBER]->(Marketing2),
+  (MarketingRoles)-[:MEMBER]->(Marketing3),
+  (GamCommRoles)-[:MEMBER]->(GamblingComm1),
+  (GamCommRoles)-[:MEMBER]->(GamblingComm2),
+  (GamCommRoles)-[:MEMBER]->(GamblingComm3),
+  (PromoRoles)-[:MEMBER]->(Promo1),
+  (PromoRoles)-[:MEMBER]->(Promo2),
+  (PromoRoles)-[:MEMBER]->(Promo3),
+  (PromoRoles)-[:MEMBER]->(Promo4),
+  (SecRoles)-[:MEMBER]->(Security1),
+  (SecRoles)-[:MEMBER]->(Security2),
+  (SecRoles)-[:MEMBER]->(Security3),
+  (SecRoles)-[:MEMBER]->(Security4),
+  (SecRoles)-[:MEMBER]->(SaferGamb1),
+  (SecRoles)-[:MEMBER]->(SaferGamb2),
+  (SecRoles)-[:MEMBER]->(SaferGamb3),
+  (SecRoles)-[:MEMBER]->(SaferGamb4)
