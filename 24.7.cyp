@@ -119,17 +119,17 @@ CREATE
 
 
 //Casino Roles
-CREATE(Pit:Casino{title:"Pitboss"})
-CREATE(Croupiers:Casino{title:"Croupiers"})
+CREATE(Pit:Role{title:"Pitboss"})
+CREATE(Croupiers:Role{title:"Croupiers"})
 
 //Casino Pitboss
-CREATE(Pitboss:Pitboss{title:"Pitboss", name:"Jim Hawkins", DOB:"11/02/1978"})
+CREATE(Pitboss:Staff{title:"Pitboss", name:"Jim Hawkins", DOB:"11/02/1978"})
 
 //Casino Croupiers
-CREATE(Croupier1:Croupier{title:"Croupier", name:"Rebecca Stanley", DOB:"09/09/2001", game:"Roulette"})
-CREATE(Croupier2:Croupier{title:"Croupier", name:"Adam Swanson", DOB:"13/04/1998", game:"Blackjack"})
-CREATE(Croupier3:Croupier{title:"Croupier", name:"Amelia Dailey", DOB:"29/01/2000", game:"Poker"})
-CREATE(Croupier4:Croupier{title:"Croupier", name:"Melissa Star", DOB:"09/10/1996", game:"Baccarat"})
+CREATE(Croupier1:Staff{title:"Croupier", name:"Rebecca Stanley", DOB:"09/09/2001", game:"Roulette"})
+CREATE(Croupier2:Staff{title:"Croupier", name:"Adam Swanson", DOB:"13/04/1998", game:"Blackjack"})
+CREATE(Croupier3:Staff{title:"Croupier", name:"Amelia Dailey", DOB:"29/01/2000", game:"Poker"})
+CREATE(Croupier4:Staff{title:"Croupier", name:"Melissa Star", DOB:"09/10/1996", game:"Baccarat"})
 CREATE
   (CasinoRoles)-[:ROLE]->(Pit),
   (CasinoRoles)-[:ROLE]->(Croupiers),
@@ -144,17 +144,17 @@ CREATE(Traders:Betting{title:"Traders"})
 
 
 //Traders - bet
-CREATE(FootballT:FootballT{title:"Football"})
-CREATE(Trader1:FootballT{title:"Trader", name:"Andy Cole", DOB:"01/11/1979", sport:"Football"})
-CREATE(Trader2:FootballT{title:"Trader", name:"Chris James", DOB:"21/03/1983", sport:"Football"})
-CREATE(Trader3:FootballT{title:"Trader", name:"Nicole Hammer", DOB:"18/01/1989", sport:"Football"})
-CREATE(HorseT:HorseT{title:"Horse Racing"})
-CREATE(Trader4:HorseT{title:"Trader", name:"Nat Speaks", DOB:"11/12/1978", sport:"Horse Racing"})
-CREATE(Trader5:HorseT{title:"Trader", name:"Rebecca Alvesera", DOB:"05/03/1985", sport:"Horse Racing"})
-CREATE(Trader6:HorseT{title:"Trader", name:"Nadia Pointing", DOB:"14/07/1980", sport:"Horse Racing"})
-CREATE(EsportsT:EsportsT{title:"Esports"})
-CREATE(Trader7:EsportsT{title:"Trader", name:"Billy Kid", DOB:"29/09/1990", sport:"Esports"})
-CREATE(Trader8:EsportsT{title:"Trader", name:"Pasca Voscov", DOB:"12/04/1988", sport:"Esports"})
+CREATE(FootballT:Role{title:"Football"})
+CREATE(Trader1:Staff{title:"Trader", name:"Andy Cole", DOB:"01/11/1979", sport:"Football"})
+CREATE(Trader2:Staff{title:"Trader", name:"Chris James", DOB:"21/03/1983", sport:"Football"})
+CREATE(Trader3:Staff{title:"Trader", name:"Nicole Hammer", DOB:"18/01/1989", sport:"Football"})
+CREATE(HorseT:Role{title:"Horse Racing"})
+CREATE(Trader4:Staff{title:"Trader", name:"Nat Speaks", DOB:"11/12/1978", sport:"Horse Racing"})
+CREATE(Trader5:Staff{title:"Trader", name:"Rebecca Alvesera", DOB:"05/03/1985", sport:"Horse Racing"})
+CREATE(Trader6:Staff{title:"Trader", name:"Nadia Pointing", DOB:"14/07/1980", sport:"Horse Racing"})
+CREATE(EsportsT:Role{title:"Esports"})
+CREATE(Trader7:Staff{title:"Trader", name:"Billy Kid", DOB:"29/09/1990", sport:"Esports"})
+CREATE(Trader8:Staff{title:"Trader", name:"Pasca Voscov", DOB:"12/04/1988", sport:"Esports"})
 
 CREATE
   (BetRoles)-[:TRADERS]->(Traders),
@@ -171,30 +171,30 @@ CREATE
   (EsportsT)-[:TRADER]->(Trader8)
 
 //Gaming Roles
-CREATE(Technician:Gaming{title:"Technicians"})
-CREATE(Developer:Gaming{title:"Developers"})
-CREATE(Tester:Gaming{title:"Testers"})
+CREATE(Technician:Role{title:"Technicians"})
+CREATE(Developer:Role{title:"Developers"})
+CREATE(Tester:Role{title:"Testers"})
 
 //Technicians
-CREATE(Technician1:Technician{title:"Technician", name:"Addesenya Tobias", DOB:"22/04/1994"})
-CREATE(Technician2:Technician{title:"Technician", name:"Becky Anne", DOB:"09/09/1996"})
-CREATE(Technician3:Technician{title:"Technician", name:"Peter Quill", DOB:"23/10/1990"})
+CREATE(Technician1:Staff{title:"Technician", name:"Addesenya Tobias", DOB:"22/04/1994"})
+CREATE(Technician2:Staff{title:"Technician", name:"Becky Anne", DOB:"09/09/1996"})
+CREATE(Technician3:Staff{title:"Technician", name:"Peter Quill", DOB:"23/10/1990"})
 
 //Developers
-CREATE(Developer1:Developer{title:"Developer", name:"Tony Dodrigo", DOB:"19/06/1987"})
-CREATE(Developer2:Developer{title:"Developer", name:"Matthew Clarke", DOB:"12/03/1984"})
-CREATE(Developer3:Developer{title:"Developer", name:"Jessup Ryan", DOB:"05/10/1980"})
-CREATE(Developer4:Developer{title:"Developer", name:"Jessica Smalls", DOB:"23/10/1986"})
+CREATE(Developer1:Staff{title:"Developer", name:"Tony Dodrigo", DOB:"19/06/1987"})
+CREATE(Developer2:Staff{title:"Developer", name:"Matthew Clarke", DOB:"12/03/1984"})
+CREATE(Developer3:Staff{title:"Developer", name:"Jessup Ryan", DOB:"05/10/1980"})
+CREATE(Developer4:Staff{title:"Developer", name:"Jessica Smalls", DOB:"23/10/1986"})
 
 //Testers
-CREATE(Tester1:Tester{title:"Tester", name:"Sandy Mclain", DOB:"21/12/1996"})
-CREATE(Tester2:Tester{title:"Tester", name:"Ian Stern", DOB:"08/01/2000"})
+CREATE(Tester1:Staff{title:"Tester", name:"Sandy Mclain", DOB:"21/12/1996"})
+CREATE(Tester2:Staff{title:"Tester", name:"Ian Stern", DOB:"08/01/2000"})
 
 //Betting Role Relationships
 CREATE
-  (GamingRoles)-[:TECH]->(Technician),
-  (GamingRoles)-[:DEV]->(Developer),
-  (GamingRoles)-[:TEST]->(Tester),
+  (GamingRoles)-[:ROlE]->(Technician),
+  (GamingRoles)-[:ROLE]->(Developer),
+  (GamingRoles)-[:ROLE]->(Tester),
   (Technician)-[:TECHNICIAN]->(Technician1),
   (Technician)-[:TECHNICIAN]->(Technician2),
   (Technician)-[:TECHNICIAN]->(Technician3),
@@ -214,52 +214,52 @@ CREATE(GamblingCommission:Department{title:"The Gambling Commission"})
 CREATE(Marketing:Department{title:"Marketing"})
 
 //Fraud team
-CREATE(FraudRoles:FraudR{title:"Fraud Roles"})
-CREATE(FraudDoc:FraudD{title:"Fraud Documents"})
+CREATE(FraudRoles:Role{title:"Fraud Roles"})
+CREATE(FraudDoc:Documents{title:"Fraud Documents"})
 
-CREATE(Fraud1:FraudR{title:"Fraud Team", name:"Joey Tribi", DOB:"20/05/1987"})
-CREATE(Fraud2:FraudR{title:"Fraud Team", name:"Ellie Daniels", DOB:"12/09/1990"})
-CREATE(Fraud3:FraudR{title:"Fraud Team", name:"Pamela Richards", DOB:"29/02/1989"})
-CREATE(Fraud4:FraudR{title:"Fraud Team", name:"Lewis Reed", DOB:"09/01/1985"})
+CREATE(Fraud1:Staff{title:"Fraud Team", name:"Joey Tribi", DOB:"20/05/1987"})
+CREATE(Fraud2:Staff{title:"Fraud Team", name:"Ellie Daniels", DOB:"12/09/1990"})
+CREATE(Fraud3:Staff{title:"Fraud Team", name:"Pamela Richards", DOB:"29/02/1989"})
+CREATE(Fraud4:Staff{title:"Fraud Team", name:"Lewis Reed", DOB:"09/01/1985"})
 
 //Security and Safer gambling team
-CREATE(SecRoles:SecR{title:"Security Roles"})
-CREATE(SecDoc:SecD{title:"Security Documents"})
+CREATE(SecRoles:Role{title:"Security Roles"})
+CREATE(SecDoc:Documents{title:"Security Documents"})
 
-CREATE(Security1:SecR{title:"Security Team", name:"Tilly Lewis", DOB:"14/07/1990"})
-CREATE(Security2:SecR{title:"Security Team", name:"Harry Hallson", DOB:"10/03/1985"})
-CREATE(Security3:SecR{title:"Security Team", name:"Taylor Steward", DOB:"23/09/1989"})
-CREATE(Security4:SecR{title:"Security Team", name:"Nelly Anderson", DOB:"30/09/1992"})
+CREATE(Security1:Staff{title:"Security Team", name:"Tilly Lewis", DOB:"14/07/1990"})
+CREATE(Security2:Staff{title:"Security Team", name:"Harry Hallson", DOB:"10/03/1985"})
+CREATE(Security3:Staff{title:"Security Team", name:"Taylor Steward", DOB:"23/09/1989"})
+CREATE(Security4:Staff{title:"Security Team", name:"Nelly Anderson", DOB:"30/09/1992"})
 
-CREATE(SaferGamb1:SecR{title:"Safer Gambling", name:"Barry Khan", DOB:"02/04/1984"})
-CREATE(SaferGamb2:SecR{title:"Safer Gambling", name:"Terry Pollard", DOB:"17/06/1990"})
-CREATE(SaferGamb3:SecR{title:"Safer Gambling", name:"Paul Rudd", DOB:"24/11/1989"})
-CREATE(SaferGamb4:SecR{title:"Safer Gambling", name:"Shania Twanette", DOB:"27/01/1985"})
+CREATE(SaferGamb1:Staff{title:"Safer Gambling", name:"Barry Khan", DOB:"02/04/1984"})
+CREATE(SaferGamb2:Staff{title:"Safer Gambling", name:"Terry Pollard", DOB:"17/06/1990"})
+CREATE(SaferGamb3:Staff{title:"Safer Gambling", name:"Paul Rudd", DOB:"24/11/1989"})
+CREATE(SaferGamb4:Staff{title:"Safer Gambling", name:"Shania Twanette", DOB:"27/01/1985"})
 
 //Promotions team
-CREATE(PromoRoles:PromoR{title:"Promotion Roles"})
-CREATE(PromoDoc:PromoDoc{title:"Promotion Documents"})
+CREATE(PromoRoles:Role{title:"Promotion Roles"})
+CREATE(PromoDoc:Documents{title:"Promotion Documents"})
 
-CREATE(Promo1:PromoR{title:"Promotion Team", name:"Sarah Andrews", DOB:"19/02/1992"})
-CREATE(Promo2:PromoR{title:"Promotion Team", name:"Zarrifsha Ahmed", DOB:"20/12/1997"})
-CREATE(Promo3:PromoR{title:"Promotion Team", name:"Richard Brett", DOB:"04/08/1990"})
-CREATE(Promo4:PromoR{title:"Promotion Team", name:"Euan Shelby", DOB:"01/10/1995"})
+CREATE(Promo1:Staff{title:"Promotion Team", name:"Sarah Andrews", DOB:"19/02/1992"})
+CREATE(Promo2:Staff{title:"Promotion Team", name:"Zarrifsha Ahmed", DOB:"20/12/1997"})
+CREATE(Promo3:Staff{title:"Promotion Team", name:"Richard Brett", DOB:"04/08/1990"})
+CREATE(Promo4:Staff{title:"Promotion Team", name:"Euan Shelby", DOB:"01/10/1995"})
 
 //Gambling Commission
-CREATE(GamCommRoles:GamComR{title:"Gambling Commission Roles"})
-CREATE(GamCommDoc:GamComD{title:"Gambling Commission Documents"})
+CREATE(GamCommRoles:Role{title:"Gambling Commission Roles"})
+CREATE(GamCommDoc:Documents{title:"Gambling Commission Documents"})
 
-CREATE(GamblingComm1:GamComR{title:"Gambling Comission Officer", name:"Ross Jones", DOB:"22/04/1987"})
-CREATE(GamblingComm2:GamComR{title:"Gambling Comission Officer", name:"Charlie Barks", DOB:"09/07/1985"})
-CREATE(GamblingComm3:GamComR{title:"Gambling Comission Officer", name:"Melinda Privchenka", DOB:"23/07/1982"})
+CREATE(GamblingComm1:Staff{title:"Gambling Comission Officer", name:"Ross Jones", DOB:"22/04/1987"})
+CREATE(GamblingComm2:Staff{title:"Gambling Comission Officer", name:"Charlie Barks", DOB:"09/07/1985"})
+CREATE(GamblingComm3:Staff{title:"Gambling Comission Officer", name:"Melinda Privchenka", DOB:"23/07/1982"})
 
 //Marketing team
-CREATE(MarketingRoles:MarkR{title:"Marketing Roles"})
-CREATE(MarketingDoc:MarkD{title:"Marketing Documents"})
+CREATE(MarketingRoles:Role{title:"Marketing Roles"})
+CREATE(MarketingDoc:Documents{title:"Marketing Documents"})
 
-CREATE(Marketing1:MarkR{title:"Marketing Team", name:"Tessa Smithers", DOB:"12/12/1996"})
-CREATE(Marketing2:MarkR{title:"Marketing Team", name:"Carmel Caroll", DOB:"17/03/1994"})
-CREATE(Marketing3:MarkR{title:"Marketing Team", name:"Paul Bettany", DOB:"30/09/1992"})
+CREATE(Marketing1:Staff{title:"Marketing Team", name:"Tessa Smithers", DOB:"12/12/1996"})
+CREATE(Marketing2:Staff{title:"Marketing Team", name:"Carmel Caroll", DOB:"17/03/1994"})
+CREATE(Marketing3:Staff{title:"Marketing Team", name:"Paul Bettany", DOB:"30/09/1992"})
 
 //Relationships
 CREATE
@@ -272,8 +272,8 @@ CREATE
   (Fraud)-[:FRAUD_DOCUMENTS]->(FraudDoc),
   (Marketing)-[:MARKETING_ROLES]->(MarketingRoles),
   (Marketing)-[:MARKETING_DOCUMENTS]->(MarketingDoc),
-  (GamblingCommission)-[:GAMBLING_COMM_ROLES]->(GambCommRoles),
-  (GamblingCommission)-[:GAMBLING_COMM_DOCS]->(GambCommDoc),
+  (GamblingCommission)-[:GAMBLING_COMM_ROLES]->(GamCommRoles),
+  (GamblingCommission)-[:GAMBLING_COMM_DOCS]->(GamCommDoc),
   (Promotions)-[:PROMOTION_ROLES]->(PromoRoles),
   (Promotions)-[:PROMOTION_DOCUMENTS]->(PromoDoc),
   (Security)-[:SECURITY_ROLES]->(SecRoles),
@@ -300,3 +300,6 @@ CREATE
   (SecRoles)-[:MEMBER]->(SaferGamb2),
   (SecRoles)-[:MEMBER]->(SaferGamb3),
   (SecRoles)-[:MEMBER]->(SaferGamb4)
+
+//Website Mapping
+CREATE(Website:Website{title:"Website"})
