@@ -144,3 +144,66 @@ CREATE(Traders:Betting{title:"Traders"})
 
 
 //Traders - bet
+CREATE(FootballT:FootballT{title:"Football"})
+CREATE(Trader1:FootballT{title:"Trader", name:"Andy Cole", DOB:"01/11/1979", sport:"Football"})
+CREATE(Trader2:FootballT{title:"Trader", name:"Chris James", DOB:"21/03/1983", sport:"Football"})
+CREATE(Trader3:FootballT{title:"Trader", name:"Nicole Hammer", DOB:"18/01/1989", sport:"Football"})
+CREATE(HorseT:HorseT{title:"Horse Racing"})
+CREATE(Trader4:HorseT{title:"Trader", name:"Nat Speaks", DOB:"11/12/1978", sport:"Horse Racing"})
+CREATE(Trader5:HorseT{title:"Trader", name:"Rebecca Alvesera", DOB:"05/03/1985", sport:"Horse Racing"})
+CREATE(Trader6:HorseT{title:"Trader", name:"Nadia Pointing", DOB:"14/07/1980", sport:"Horse Racing"})
+CREATE(EsportsT:EsportsT{title:"Esports"})
+CREATE(Trader7:EsportsT{title:"Trader", name:"Billy Kid", DOB:"29/09/1990", sport:"Esports"})
+CREATE(Trader8:EsportsT{title:"Trader", name:"Pasca Voscov", DOB:"12/04/1988", sport:"Esports"})
+
+CREATE
+  (BetRoles)-[:TRADERS]->(Traders),
+  (Traders)-[:FOOTBALL]->(FootballT),
+  (FootballT)-[:TRADER]->(Trader1),
+  (FootballT)-[:TRADER]->(Trader2),
+  (FootballT)-[:TRADER]->(Trader3),
+  (Traders)-[:HORSE]->(HorseT),
+  (HorseT)-[:TRADER]->(Trader4),
+  (HorseT)-[:TRADER]->(Trader5),
+  (HorseT)-[:TRADER]->(Trader6),
+  (Traders)-[:ESPORTS]->(EsportsT),
+  (EsportsT)-[:TRADER]->(Trader7),
+  (EsportsT)-[:TRADER]->(Trader8)
+
+//Gaming Roles
+CREATE(Technician:Gaming{title:"Technicians"})
+CREATE(Developer:Gaming{title:"Developers"})
+CREATE(Tester:Gaming{title:"Testers"})
+
+//Technicians
+CREATE(Technician1:Technician{title:"Technician", name:"Addesenya Tobias", DOB:"22/04/1994"})
+CREATE(Technician2:Technician{title:"Technician", name:"Becky Anne", DOB:"09/09/1996"})
+CREATE(Technician3:Technician{title:"Technician", name:"Peter Quill", DOB:"23/10/1990"})
+
+//Developers
+CREATE(Developer1:Developer{title:"Developer", name:"Tony Dodrigo", DOB:"19/06/1987"})
+CREATE(Developer2:Developer{title:"Developer", name:"Matthew Clarke", DOB:"12/03/1984"})
+CREATE(Developer3:Developer{title:"Developer", name:"Jessup Ryan", DOB:"05/10/1980"})
+CREATE(Developer4:Developer{title:"Developer", name:"Jessica Smalls", DOB:"23/10/1986"})
+
+//Testers
+CREATE(Tester1:Tester{title:"Tester", name:"Sandy Mclain", DOB:"21/12/1996"})
+CREATE(Tester2:Tester{title:"Tester", name:"Ian Stern", DOB:"08/01/2000"})
+
+//Betting Role Relationships
+CREATE
+  (GamingRoles)-[:TECH]->(Technician),
+  (GamingRoles)-[:DEV]->(Developer),
+  (GamingRoles)-[:TEST]->(Tester),
+  (Technician)-[:TECHNICIAN]->(Technician1),
+  (Technician)-[:TECHNICIAN]->(Technician2),
+  (Technician)-[:TECHNICIAN]->(Technician3),
+  (Developer)-[:DEVELOPER]->(Developer1),
+  (Developer)-[:DEVELOPER]->(Developer2),
+  (Developer)-[:DEVELOPER]->(Developer3),
+  (Developer)-[:DEVELOPER]->(Developer4),
+  (Tester)-[:TESTER]->(Tester1),
+  (Tester)-[:TESTER]->(Tester2)
+
+
+//FRAUD SECURITY SAFER GAMBLING PROMOTIONS/MARKETING OVERSEEN BY THE GAMBLING COMMISSION
