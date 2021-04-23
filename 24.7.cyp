@@ -140,7 +140,7 @@ CREATE
   (Croupiers)-[:DEALER]->(Croupier4)
 
 //Betting Roles
-CREATE(Traders:Betting{title:"Traders"})
+CREATE(Traders:Role{title:"Traders"})
 
 
 //Traders - bet
@@ -330,5 +330,8 @@ CREATE
   (ULogin)-[:GAMING]->(GamesP),
   (ULogin)-[:BETTING]->(BettingP),
   (SLogin)-[:BET_ADMIN]->(BetAdmin),
-  (SLogin)-[:PLAYTECH]->(PlayTech),
+  (SLogin)-[:PLAY_TECH]->(PlayTech),
   (SLogin)-[:ADMIN]->(Administration)
+
+//Documents and responsibilities
+CREATE()
