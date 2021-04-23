@@ -334,4 +334,16 @@ CREATE
   (SLogin)-[:ADMIN]->(Administration)
 
 //Documents and responsibilities
+CREATE(PersonalID:Documents{title:"Personal ID", purpose:"Identity documents needed for account verification"})
+CREATE(Bank:Documents{title:"Banking Documents", purpose:"Supporting banking documents"})
+CREATE(Handling:Documents{title:"Handling Times Reports", purpose:"Average contact handling line for support staff"})
+CREATE(Rota:Documents{title:"Timetable Rotas", purpose:"To schedule and indicate when people are on shift"})
+CREATE(Budget:Documents{title:"Budget Reports", purpose:"To indicate the monthly spending budget of the departments"})
+CREATE(Agile:Documents{title:"Agile Documents", purpose:"To ensure good project and team naagement following the agile methodology"})
+CREATE(NetDeposits:Documents{title:"Net Deposits", purpose:"To review and ensure money laundering is minimal"})
+CREATE(Card:Documents{title:"Card Fraud", purpose:"Ensure fraud is not occuring on the cardholders card"})
+CREATE(PromotionsR:Documents{title:"Promotions T&C's", purpose:"Any new promotions are readily available for use of public and staff"})
+CREATE(MarkCampaign:Documents{title:"Marketing Campaigns", purpose:"All marketing campaign ideas and development"})
+CREATE(GameDev:Documents{title:"Game development", purpose:"Adequately develop and test game ideas"})
+CREATE(SecReports:Documents{title:"Security Report", purpose:"Developed internal and external security reports and account security"})
 CREATE()
