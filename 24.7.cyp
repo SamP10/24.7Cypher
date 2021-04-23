@@ -346,4 +346,13 @@ CREATE(PromotionsR:Documents{title:"Promotions T&C's", purpose:"Any new promotio
 CREATE(MarkCampaign:Documents{title:"Marketing Campaigns", purpose:"All marketing campaign ideas and development"})
 CREATE(GameDev:Documents{title:"Game development", purpose:"Adequately develop and test game ideas"})
 CREATE(SecReports:Documents{title:"Security Report", purpose:"Developed internal and external security reports and account security"})
-CREATE()
+CREATE(GamCommReport:Documents{title:"Gambling Commission Report", purpose:"Reports and outlined conditions of the gambling commission"})
+
+//Document Relationship
+CREATE
+  (FraudDoc)-[:REPORTS]->(Card),
+  (Management)-[:CONDUCTS]->(Handling),
+  (Management)-[:PRODUCE]->(Rota),
+  (Developer)-[:DEVELOPS]->(GameDev),
+  (Tester)-[:TESTS]->(GameDev),
+
