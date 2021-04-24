@@ -355,4 +355,11 @@ CREATE
   (Management)-[:PRODUCE]->(Rota),
   (Developer)-[:DEVELOPS]->(GameDev),
   (Tester)-[:TESTS]->(GameDev),
+  (Management)-[:PRODUCE]->(Budget),
+  (PromoDoc)-[:PRODUCE]->(PromotionsR),
+  (MarketingDoc)-[:PRODUCE]->(MarkCampaign),
+  (SecDoc)-[:PRODUCE]->(SecReports),
+  (GamCommDoc)-[:ENFORCE]->(GamCommReport),
+  (Management)-[:MANAGES]->(Agile),
+  (FraudDoc)-[:OVERSEE]->(NetDeposits)
 
