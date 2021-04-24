@@ -342,7 +342,7 @@ CREATE(Budget:Documents{title:"Budget Reports", purpose:"To indicate the monthly
 CREATE(Agile:Documents{title:"Agile Documents", purpose:"To ensure good project and team naagement following the agile methodology"})
 CREATE(NetDeposits:Documents{title:"Net Deposits", purpose:"To review and ensure money laundering is minimal"})
 CREATE(Card:Documents{title:"Card Fraud", purpose:"Ensure fraud is not occuring on the cardholders card"})
-CREATE(PromotionsR:Documents{title:"Promotions T&C's", purpose:"Any new promotions are readily available for use of public and staff"})
+CREATE(PromotionsR:Documents{title:"Promotions Ts and Cs", purpose:"Any new promotions are readily available for use of public and staff"})
 CREATE(MarkCampaign:Documents{title:"Marketing Campaigns", purpose:"All marketing campaign ideas and development"})
 CREATE(GameDev:Documents{title:"Game development", purpose:"Adequately develop and test game ideas"})
 CREATE(SecReports:Documents{title:"Security Report", purpose:"Developed internal and external security reports and account security"})
@@ -363,3 +363,17 @@ CREATE
   (Management)-[:MANAGES]->(Agile),
   (FraudDoc)-[:OVERSEE]->(NetDeposits)
 
+//Upper Management
+CREATE(UpperManagement:Department{title:"Upper Management"})
+CREATE(CEO:Staff{title:"Bet 24/7 CEO", name:"Gregory Hozen", DOB:"29/09/1976"})
+CREATE(Board:Department{title:"Board of Directors"})
+CREATE
+  (Department)-[:MANAGEMENT]->(UpperManagement),
+  (UpperManagement)-[:CEO]->(CEO),
+  (UpperManagement)-[:BOARD]->(Board),
+  (CEO)-[:OVERSEES]->(Department),
+  (Board)-[:APPROVE]->(Budget),
+  (UpperManagement)-[:MANAGES]->(Management),
+  (UpperManagement)-[:REVIEW]->(SecReports),
+  (UpperManagement)-[:REVIEW]->(MarkCampaign),
+  (UpperManagement)-[:APPROVE]->(PromotionsR)
