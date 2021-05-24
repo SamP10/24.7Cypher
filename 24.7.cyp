@@ -377,3 +377,16 @@ CREATE
   (UpperManagement)-[:REVIEW]->(SecReports),
   (UpperManagement)-[:REVIEW]->(MarkCampaign),
   (UpperManagement)-[:APPROVE]->(PromotionsR)
+
+CREATE(Security:Security{title:"Security"})
+CREATE(MitM:Security{title:"Man in the middle", description:"Man in the middle attacks are when someone on the network a takes an action on another user's behalf inheriting their privilege. This could a CSRF attack or sniffing packets on a network that is unencrypted. Either way the original connection is controlled and redirected by a malicious user on that network."})
+CREATE(Insider:Security{title:"Malicious Insider", description:"A malicious insider is a internal employee who takes a malicious action to the infrastructure directly, this can range from embezzlement to damaging the infrastructure through direct destruction of property or services on a system."})
+CREATE(Phishing:Security{title:"Phishing Scams", description:"A phishing scam is where random emails which a impersonating someone of internal or external source, such as an employee or a weekly bulletin. Normally they consist of a CSRF attack attempting to get hold of a user's session or credentials to disrupt a business."})
+CREATE(DDOS:Security{title:"Dedicated Denial Of Service", description:"A DDOS attack is where a computer or a network of computers send messages to the server or systems to bring the server down for often extended periods of time, most are used as ransomware to get money to bring the server backup."})
+CREATE(Malware:Security{title:"Malware", description:"Malware comes in different forms from rootkits which allow attackers to a variety of tools with keytracers and screen recorders or a virus such a worm which connections and spreads its malicious code once gaining access. Normally their through malicious downloads or a malicious URL from a phishing email or text."})
+CREATE
+  (Security)-[:RISK]->(MitM),
+  (Security)-[:RISK]->(Insider),
+  (Security)-[:RISK]->(Phishing),
+  (Security)-[:RISK]->(DDOS),
+  (Security)-[:RISK]->(Malware)
