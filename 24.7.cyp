@@ -389,4 +389,28 @@ CREATE
   (Security)-[:RISK]->(Insider),
   (Security)-[:RISK]->(Phishing),
   (Security)-[:RISK]->(DDOS),
-  (Security)-[:RISK]->(Malware)
+  (Security)-[:RISK]->(Malware),
+  (Phishing)-[:RISK]->(Department),
+  (Insider)-[:RISK]->(Fraud),
+  (Insider)-[:RISK]->(Contact),
+  (Phishing)-[:RISK]->(Contact),
+  (Phishing)-[:RISK]->(Social),
+  (DDOS)-[:RISK]->(Website),
+  (MitM)-[:RISK]->(Contact),
+  (Malware)-[:RISK]->(Department)
+
+CREATE(SMitigation:Mitigation{title:"Mitigation", description:"These are mitigation techniques which can be deployed to minimise the risks to the security of the business."})
+CREATE(ACL:Mitigation{title:"Access Control Lists", description:"This is user controls of giving permssion what each authority has access to."})
+CREATE(Encryption:Mitigation{title:"Network Encryption", description:"Network encryption is a way of ensuring anyone lisening on the network cannot see packet transmissions in plain text"})
+CREATE(Audit:Mitigation{title:"Audit Log", description:"Auditing your employee's actions on the system is a secure way of analysing if someone is conducting malicious activity on the system."})
+CREATE
+  (SMitigation)-[:MITIGATION]->(ACL),
+  (SMitigation)-[:MITIGATION]->(Encryption),
+  (SMitigation)-[:MITIGATION]->(Audit),
+  (Audit)-[:MONITOR]->(Department),
+  (Audit)-[:MONITOR]->(Fraud),
+  (Audit)-[:MONITOR]->(Contact),
+  (Encryption)-[:SECURE]->(Contact),
+  (Encryption)-[:SECURE]->(Department),
+  (ACL)-[:MONITOR]->(Department),
+  (ACL)-[:MONITOR]->(Website)
